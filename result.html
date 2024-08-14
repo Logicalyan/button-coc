@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 - Result</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <p id="resultText"></p>
+        <a href="index.html">Back to Page 1</a>
+    </div>
+
+    <script>
+        const firstClick = localStorage.getItem('firstClick');
+
+        if (firstClick) {
+            document.getElementById('resultText').innerText = "This device was the first to click the button!";
+        } else {
+            document.getElementById('resultText').innerText = "Another device clicked the button first.";
+        }
+    </script>
+</body>
+</html>

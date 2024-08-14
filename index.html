@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 - Click the Button</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Button Click Challenge</h1>
+        <p>Click the button below as fast as you can!</p>
+        <button id="clickButton">Click Me!</button>
+        <p id="status"></p>
+    </div>
+
+    <script>
+        let clicked = false;
+
+        document.getElementById('clickButton').addEventListener('click', () => {
+            if (!clicked) {
+                clicked = true;
+                document.getElementById('status').innerText = "You clicked the button!";
+                
+                // Send the data to the server
+                localStorage.setItem('firstClick', 'true');
+                window.location.href = "result.html";
+            }
+        });
+    </script>
+</body>
+</html>
